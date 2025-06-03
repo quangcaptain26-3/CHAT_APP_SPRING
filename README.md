@@ -1,7 +1,9 @@
 # 💬 Spring Boot WebSocket Chat Application
 
 > *"Spring Boot is where Java speaks the language of the future — fast, elegant, and built to scale."*
+> 
 > **Spring Boot 是Java说话未来的地方，快速、优雅，并且具有伸缩性。**
+> 
 > **Spring Boot là nơi Java nói ngôn ngữ của tương lai — nhanh chóng, thanh thoát và dễ mở rộng.**
 
 ## 📖 Mô tả dự án
