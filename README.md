@@ -1,200 +1,215 @@
-# 💬 Spring Boot WebSocket Chat Application
+💬 Real-time Chat Application with Spring Boot & WebSocket
+"Spring Boot: Where enterprise meets elegance, turning complex Java development into a symphony of simplicity."
+"Spring Boot: Nơi doanh nghiệp gặp gỡ sự tinh tế, biến việc phát triển Java phức tạp thành một bản giao hưởng của sự đơn giản."
 
-> *"Spring Boot - Where enterprise meets elegance, turning complex Java development into a symphony of simplicity."*
+📖 Project Overview
+Welcome to a robust real-time chat application, built upon the powerful Spring Boot framework and WebSocket technology! This project delivers a seamless messaging experience, enabling multiple users to connect and interact within a single chat room. With its intuitive, user-friendly interface and instant update capabilities, it's the perfect solution for efficient group communication.
 
-## 📖 Mô tả dự án
+🛠️ Technologies Used
+Backend
+Java 17: The core programming language, ensuring high performance and stability.
 
-Ứng dụng chat real-time được xây dựng với Spring Boot và WebSocket, cho phép nhiều người dùng trò chuyện trong cùng một phòng chat. Giao diện đơn giản, thân thiện với người dùng và hỗ trợ thời gian thực.
+Spring Boot 3.4.3: The leading framework, facilitating rapid and effortless application development.
 
-## 🛠️ Công nghệ sử dụng
+Spring WebSocket: Provides real-time, bidirectional communication capabilities.
 
-### Backend
-- **Java 17** - Ngôn ngữ lập trình chính
-- **Spring Boot 3.4.3** - Framework chính
-- **Spring WebSocket** - Hỗ trợ WebSocket cho real-time messaging
-- **Spring Web** - RESTful web services
-- **Lombok** - Giảm boilerplate code
-- **STOMP** (Simple Text Oriented Messaging Protocol) - Messaging protocol
+Spring Web: For building powerful RESTful web services.
 
-### Frontend
-- **HTML5** - Cấu trúc trang web
-- **CSS3** - Styling và responsive design
-- **JavaScript ES6** - Logic phía client
-- **SockJS** - WebSocket fallback library
-- **STOMP.js** - STOMP client for JavaScript
+Lombok: Significantly reduces boilerplate code, leading to cleaner and more readable codebases.
 
-### Build Tools
-- **Maven 3.9.9** - Dependency management và build automation
-- **Maven Wrapper** - Đảm bảo version consistency
+STOMP (Simple Text Oriented Messaging Protocol): An efficient and straightforward messaging protocol over WebSocket.
 
-## 🚀 Hướng dẫn cài đặt và chạy
+Frontend
+HTML5: Modern web page structure.
 
-### Yêu cầu hệ thống
-- Java 17 hoặc cao hơn
-- Maven 3.6+ (hoặc sử dụng Maven Wrapper có sẵn)
-- IDE: VS Code hoặc IntelliJ IDEA
+CSS3: Styling and ensuring responsive design across all devices.
 
-### 🔧 Cài đặt với VS Code
+JavaScript ES6: Client-side logic, delivering dynamic and interactive user experiences.
 
-1. **Clone repository:**
-   ```bash
-   git clone <repository-url>
-   cd chat-application
-   ```
+SockJS: A WebSocket fallback library, ensuring stable connections even in restrictive network environments.
 
-2. **Cài đặt extensions cần thiết:**
-   - Extension Pack for Java
-   - Spring Boot Extension Pack
-   - Lombok Annotations Support for VS Code
+STOMP.js: A JavaScript client for the STOMP protocol, simplifying message sending and receiving.
 
-3. **Mở project:**
-   ```bash
-   code .
-   ```
+Build Tools
+Maven 3.9.9: Dependency management and build automation tool.
 
-4. **Chạy ứng dụng:**
-   - Mở Terminal trong VS Code (`Ctrl + `)
-   - Chạy lệnh:
-     ```bash
-     ./mvnw spring-boot:run
-     ```
-   - Hoặc sử dụng Command Palette (`Ctrl+Shift+P`) và tìm "Spring Boot: Run"
+Maven Wrapper: Ensures all developers use the same Maven version, preventing compatibility issues.
 
-### 🔧 Cài đặt với IntelliJ IDEA
+🚀 Setup & Running Instructions
+System Requirements
+Java 17 or higher.
 
-1. **Import project:**
-   - File → Open → Chọn thư mục chứa project
-   - IntelliJ sẽ tự động detect Maven project
+Maven 3.6+ (or utilize the Maven Wrapper included in the project).
 
-2. **Cấu hình Lombok:**
-   - File → Settings → Plugins → Tìm và cài đặt "Lombok"
-   - File → Settings → Build → Compiler → Annotation Processors → Enable annotation processing
+IDE: VS Code or IntelliJ IDEA are highly recommended.
 
-3. **Chạy ứng dụng:**
-   - Cách 1: Click vào class `ChatApplication` → Run
-   - Cách 2: Maven panel → Plugins → spring-boot → spring-boot:run
-   - Cách 3: Terminal → `./mvnw spring-boot:run`
+🔧 Setup with VS Code
+Clone repository:
 
-### 🌐 Truy cập ứng dụng
+git clone <repository-url>
+cd chat-application
 
-Sau khi chạy thành công, mở trình duyệt và truy cập:
-```
+Install Essential Extensions:
+
+Extension Pack for Java
+
+Spring Boot Extension Pack
+
+Lombok Annotations Support for VS Code
+
+Open project:
+
+code .
+
+Run the application:
+
+Open Terminal in VS Code (Ctrl + `).
+
+Execute command: ./mvnw spring-boot:run
+
+Alternatively, use the Command Palette (Ctrl+Shift+P) and search for "Spring Boot: Run".
+
+🔧 Setup with IntelliJ IDEA
+Import project:
+
+File → Open → Select the project directory.
+
+IntelliJ will automatically detect the Maven project.
+
+Configure Lombok:
+
+File → Settings → Plugins → Search and install "Lombok".
+
+File → Settings → Build, Execution, Deployment → Compiler → Annotation Processors → Check Enable annotation processing.
+
+Run the application:
+
+Option 1: Click on the ChatApplication class → Run.
+
+Option 2: Open Maven panel → Plugins → spring-boot → spring-boot:run.
+
+Option 3: Open Terminal → ./mvnw spring-boot:run.
+
+🌐 Accessing the Application
+Once the application has successfully launched, open your web browser and navigate to:
+
 http://localhost:8080
-```
 
-## 📁 Cấu trúc dự án
-
-```
+📁 Project Structure
 src/
 ├── main/
 │   ├── java/com/marcus/chat/
 │   │   ├── ChatApplication.java          # Main application class
 │   │   ├── chat/
 │   │   │   ├── ChatController.java       # WebSocket message handlers
-│   │   │   ├── ChatMessage.java          # Message model
+│   │   │   ├── ChatMessage.java          # Message data model
 │   │   │   └── MessageType.java          # Message type enum
 │   │   └── config/
 │   │       ├── WebSocketConfig.java      # WebSocket configuration
-│   │       └── WebSocketEventListener.java # Event listener
+│   │       └── WebSocketEventListener.java # WebSocket event listener
 │   └── resources/
 │       ├── static/
-│       │   ├── css/main.css             # Stylesheet
+│       │   ├── css/main.css             # Stylesheet for the UI
 │       │   ├── js/app.js                # Client-side JavaScript
 │       │   └── index.html               # Main HTML page
-│       └── application.properties        # Configuration file
+│       └── application.properties        # Application configuration file
 └── test/
     └── java/com/marcus/chat/
         └── ChatApplicationTests.java     # Unit tests
-```
 
-## 🎯 Tính năng chính
+🎯 Key Features
+✅ Real-time Messaging: Messages are sent and received instantly, providing a seamless chat experience.
 
-- ✅ **Real-time messaging** - Tin nhắn được gửi và nhận ngay lập tức
-- ✅ **Multi-user support** - Hỗ trợ nhiều người dùng cùng lúc
-- ✅ **User join/leave notifications** - Thông báo khi có người tham gia/rời khỏi
-- ✅ **Timestamp display** - Hiển thị thời gian gửi tin nhắn
-- ✅ **Avatar colors** - Màu avatar tự động dựa trên tên người dùng
-- ✅ **Responsive design** - Giao diện thích ứng với mọi thiết bị
-- ✅ **Connection status** - Hiển thị trạng thái kết nối
+✅ Multi-user Support: Accommodates multiple users concurrently within a single chat room.
 
-## 🔧 Cấu hình
+✅ User Join/Leave Notifications: Clear notifications when users join or leave the chat room.
 
-### Cổng server
-Mặc định ứng dụng chạy trên cổng `8080`. Để thay đổi, sửa file `application.properties`:
-```properties
+✅ Timestamp Display: Detailed display of message timestamps.
+
+✅ Avatar Colors: Automatic assignment of avatar colors based on usernames, aiding easy identification.
+
+✅ Responsive Design: The interface is optimized for beautiful display and smooth operation on all screen sizes (desktop, tablet, mobile).
+
+✅ Connection Status: Displays the WebSocket connection status, letting users know when they are online.
+
+🔧 Configuration
+Server Port
+By default, the application runs on port 8080. To change it, modify the application.properties file:
+
 server.port=8081
-```
 
-### WebSocket endpoints
-- **STOMP endpoint:** `/ws`
-- **Application destination prefix:** `/app`
-- **Topic prefix:** `/topic`
-- **Public chat topic:** `/topic/public`
+WebSocket Endpoints
+STOMP Endpoint: /ws
 
-## 🎮 Cách sử dụng
+Application Destination Prefix: /app
 
-1. **Truy cập ứng dụng:** Mở `http://localhost:8080`
-2. **Nhập tên:** Gõ username và click "Start Chatting"
-3. **Chat:** Gõ tin nhắn và nhấn Enter hoặc click "Send"
-4. **Thoát:** Đóng tab/cửa sổ trình duyệt
+Topic Prefix: /topic
 
-## 🧪 Testing
+Public Chat Topic: /topic/public
 
-Chạy tests:
-```bash
+🎮 How to Use
+Access the application: Open your browser and go to http://localhost:8080.
+
+Enter your name: Type your username into the input field and click "Start Chatting".
+
+Chat: Type your message into the input box and press Enter or click the "Send" button.
+
+Exit: Close the browser tab or window to disconnect.
+
+💡 Tip: To test multi-user functionality, open multiple browser tabs and log in with different usernames!
+
+🧪 Testing
+Running Tests
 ./mvnw test
-```
 
-Hoặc trong IDE:
-- **VS Code:** Command Palette → "Java: Run Tests"
-- **IntelliJ:** Right-click trên test class → "Run Tests"
+Or within your IDE:
 
-## 📦 Build và Deploy
+VS Code: Command Palette → "Java: Run Tests"
 
-### Build JAR file:
-```bash
+IntelliJ IDEA: Right-click on the test class → "Run Tests"
+
+📦 Build and Deploy
+Build JAR file
 ./mvnw clean package
-```
 
-### Chạy JAR file:
-```bash
+Run JAR file
 java -jar target/chat-0.0.1-SNAPSHOT.jar
-```
 
-## 🛠️ Troubleshooting
+🛠️ Troubleshooting
+Common Issues
+Port already in use:
 
-### Lỗi thường gặp:
+Error: Port 8080 is already in use
 
-1. **Port đã được sử dụng:**
-   ```
-   Error: Port 8080 is already in use
-   ```
-   **Giải pháp:** Đổi port trong `application.properties` hoặc kill process đang dùng port 8080
+Solution: Change the port in application.properties or find and terminate the process using port 8080.
 
-2. **Lombok không hoạt động:**
-   - Đảm bảo đã cài đặt Lombok plugin
-   - Enable annotation processing trong IDE
+Lombok not working:
 
-3. **WebSocket connection failed:**
-   - Kiểm tra firewall/proxy settings
-   - Đảm bảo browser hỗ trợ WebSocket
+Ensure you have installed the Lombok plugin for your IDE.
 
-## 👨‍💻 Tác giả
+Check and enable annotation processing in your IDE settings.
 
-**QuangCaptain** - *Initial work*
+WebSocket connection failed:
 
-## 📄 License
+Check your firewall or proxy settings.
 
-This project is licensed under the Apache License 2.0
+Ensure your browser supports WebSocket.
 
-## 🤝 Đóng góp
+👨‍💻 Author
+QuangCaptain - Initial project contributor.
 
-1. Fork project
-2. Tạo feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Tạo Pull Request
+📄 License
+This project is licensed under the Apache License 2.0.
 
----
+🤝 Contributing
+We welcome all contributions to improve this project!
 
-💡 **Tip:** Để test với nhiều người dùng, mở nhiều tab trình duyệt với các username khác nhau!
+Fork the project.
+
+Create your feature branch (git checkout -b feature/AmazingFeature).
+
+Commit your changes (git commit -m 'Add some AmazingFeature').
+
+Push to the branch (git push origin feature/AmazingFeature).
+
+Open a Pull Request.
